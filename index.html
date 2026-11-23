@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXIS | Excelência e Inovação</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#080e18;color:#f4f7fc}
+a{text-decoration:none;color:inherit}
+.container{width:90%;max-width:1150px;margin:auto}
+header{position:fixed;top:0;width:100%;z-index:10;background:rgba(8,14,24,.94);backdrop-filter:blur(15px);border-bottom:1px solid #ffffff15}
+nav{height:75px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:27px;font-weight:bold;letter-spacing:3px}
+.logo span{color:#6ca2f3}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:14px;color:#aab6c8;transition:.3s}
+.nav-links a:hover{color:#fff}
+.hero{min-height:100vh;display:flex;align-items:center;background:radial-gradient(circle at 80% 40%,#17365b 0%,#080e18 48%)}
+.hero-content{max-width:720px;padding-top:70px;animation:entrada 1s ease}
+.eyebrow{color:#6ca2f3;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:25px}
+h1{font-size:clamp(42px,7vw,76px);line-height:1.1;letter-spacing:-2px;margin-bottom:25px}
+h1 span{color:#6ca2f3}
+.hero p{color:#aab6c8;font-size:17px;line-height:1.8;max-width:560px;margin-bottom:35px}
+.btn{display:inline-block;padding:15px 25px;background:#3978d5;border-radius:4px;font-size:14px;font-weight:bold;transition:.3s}
+.btn:hover{background:#2865bd;transform:translateY(-3px)}
+.btn-outline{background:transparent;border:1px solid #ffffff40;margin-left:10px}
+.btn-outline:hover{background:#ffffff12}
+section{padding:100px 0}
+.about{background:#0c1523}
+.section-title{font-size:40px;margin-bottom:20px;letter-spacing:-1px}
+.section-text{color:#aab6c8;line-height:1.8;max-width:650px;margin-bottom:45px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.visual{height:350px;background:linear-gradient(135deg,#17365b,#101a2a);display:flex;justify-content:center;align-items:center;border:1px solid #ffffff15;border-radius:7px}
+.visual strong{font-size:120px;color:#6ca2f3}
+.about-description{color:#aab6c8;line-height:1.9;margin-top:20px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{padding:35px 28px;background:#101a2a;border:1px solid #ffffff12;border-radius:6px;transition:.3s}
+.card:hover{transform:translateY(-7px);border-color:#3978d5}
+.card small{color:#6ca2f3;letter-spacing:2px}
+.card h3{margin:25px 0 15px;font-size:21px}
+.card p{color:#aab6c8;font-size:14px;line-height:1.8}
+.differentials{background:#0c1523}
+.differential-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:35px}
+.differential{border-left:2px solid #3978d5;padding-left:20px}
+.differential h3{margin-bottom:12px}
+.differential p{color:#aab6c8;line-height:1.8;font-size:14px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.contact-info p{color:#aab6c8;line-height:1.9;margin-top:20px}
+form{display:flex;flex-direction:column;gap:17px}
+input,textarea{width:100%;padding:15px;background:#101a2a;border:1px solid #ffffff20;border-radius:4px;color:white;font:inherit;outline:none}
+input:focus,textarea:focus{border-color:#6ca2f3}
+textarea{height:130px;resize:vertical}
+label{font-size:13px;color:#c6d1e0}
+.form-group{display:flex;flex-direction:column;gap:8px}
+button{border:0;color:white;cursor:pointer;font:inherit}
+footer{padding:30px 0;border-top:1px solid #ffffff15;background:#070c14}
+.footer-content{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer p{color:#aab6c8;font-size:13px}
+.reveal{opacity:0;transform:translateY(25px);transition:.7s}
+.reveal.active{opacity:1;transform:translateY(0)}
+@keyframes entrada{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+.menu-toggle{display:none;background:none;color:white;font-size:25px}
+@media(max-width:750px){
+.nav-links{display:none;position:absolute;top:75px;left:0;width:100%;background:#0c1523;padding:25px;flex-direction:column}
+.nav-links.open{display:flex}
+.menu-toggle{display:block}
+.about-grid,.contact-grid{grid-template-columns:1fr}
+.services-grid,.differential-grid{grid-template-columns:1fr}
+.section-title{font-size:32px}
+.btn-outline{margin:12px 0 0}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none!important;transition:none!important}
+.reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<a href="#inicio" class="logo">AXIS<span>.</span></a>
+<button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+<ul class="nav-links" id="nav-links">
+<li><a href="#inicio">Início</a></li>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#servicos">Serviços</a></li>
+<li><a href="#diferenciais">Diferenciais</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+<div class="container">
+<div class="hero-content">
+<div class="eyebrow">Excelência e inovação</div>
+<h1>Estratégia para ir além.<br><span>Resultados que importam.</span></h1>
+<p>Acreditamos que grandes resultados começam com boas decisões. Unimos estratégia, qualidade e inovação para construir soluções que geram valor real.</p>
+<a href="#sobre" class="btn">Conheça nossa empresa</a>
+<a href="#servicos" class="btn btn-outline">Nossas soluções</a>
+</div>
+</div>
+</section>
+
+<section class="about" id="sobre">
+<div class="container">
+<div class="about-grid">
+<div class="visual reveal"><strong>A.</strong></div>
+<div class="reveal">
+<div class="eyebrow">Quem somos</div>
+<h2 class="section-title">Construindo o futuro com propósito e visão.</h2>
+<p class="about-description">Somos uma empresa comprometida com a excelência, a inovação e o desenvolvimento de soluções inteligentes.</p>
+<p class="about-description">Nossa atuação é orientada por uma visão estratégica, valorizando cada projeto e buscando sempre superar expectativas por meio de qualidade e comprometimento.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="servicos">
+<div class="container">
+<div class="eyebrow">O que fazemos</div>
+<h2 class="section-title reveal">Soluções pensadas para gerar valor.</h2>
+<p class="section-text reveal">Cada desafio exige uma abordagem própria. Por isso, trabalhamos com soluções estruturadas para atender diferentes necessidades.</p>
+<div class="services-grid">
+<div class="card reveal">
+<small>01 / ESTRATÉGIA</small>
+<h3>Planejamento estratégico</h3>
+<p>Organização de objetivos, análise de cenários e desenvolvimento de estratégias orientadas para resultados consistentes.</p>
+</div>
+<div class="card reveal">
+<small>02 / INOVAÇÃO</small>
+<h3>Transformação digital</h3>
+<p>Utilização inteligente da tecnologia para aprimorar processos, ampliar possibilidades e gerar eficiência.</p>
+</div>
+<div class="card reveal">
+<small>03 / GESTÃO</small>
+<h3>Consultoria especializada</h3>
+<p>Análise, orientação e desenvolvimento de soluções personalizadas para cada realidade.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="differentials" id="diferenciais">
+<div class="container">
+<div class="eyebrow">Nossos diferenciais</div>
+<h2 class="section-title reveal">O compromisso está em cada detalhe.</h2>
+<p class="section-text reveal">Mais do que entregar soluções, buscamos construir relações duradouras e resultados sustentáveis.</p>
+<div class="differential-grid">
+<div class="differential reveal">
+<h3>Comprometimento</h3>
+<p>Responsabilidade e dedicação em cada etapa, mantendo a qualidade como prioridade.</p>
+</div>
+<div class="differential reveal">
+<h3>Visão estratégica</h3>
+<p>Decisões fundamentadas em planejamento, análise e compreensão dos objetivos.</p>
+</div>
+<div class="differential reveal">
+<h3>Excelência</h3>
+<p>Busca contínua por melhorias e soluções que realmente façam a diferença.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contato">
+<div class="container">
+<div class="contact-grid">
+<div class="contact-info reveal">
+<div class="eyebrow">Fale conosco</div>
+<h2 class="section-title">Vamos construir algo relevante?</h2>
+<p>Estamos disponíveis para conhecer seu projeto, compreender suas necessidades e encontrar caminhos para transformar ideias em resultados.</p>
+</div>
+<form id="contact-form" class="reveal">
+<div class="form-group">
+<label for="name">Nome completo</label>
+<input type="text" id="name" placeholder="Digite seu nome" required>
+</div>
+<div class="form-group">
+<label for="email">E-mail</label>
+<input type="email" id="email" placeholder="seu@email.com" required>
+</div>
+<div class="form-group">
+<label for="subject">Assunto</label>
+<input type="text" id="subject" placeholder="Assunto da mensagem" required>
+</div>
+<div class="form-group">
+<label for="message">Mensagem</label>
+<textarea id="message" placeholder="Como podemos ajudar?" required></textarea>
+</div>
+<button type="submit" class="btn">Enviar mensagem</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container footer-content">
+<a href="#inicio" class="logo">AXIS<span>.</span></a>
+<p>© <span id="year"></span> AXIS. Todos os direitos reservados.</p>
+</div>
+</footer>
+
+<script>
+const toggle=document.getElementById('menu-toggle');
+const links=document.getElementById('nav-links');
+
+toggle.addEventListener('click',()=>{
+links.classList.toggle('open');
+toggle.setAttribute('aria-expanded',links.classList.contains('open'));
+});
+
+document.querySelectorAll('.nav-links a').forEach(link=>{
+link.addEventListener('click',()=>links.classList.remove('open'));
+});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:0.12});
+
+document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+document.getElementById('contact-form').addEventListener('submit',event=>{
+event.preventDefault();
+
+const name=document.getElementById('name').value.trim();
+const email=document.getElementById('email').value.trim();
+const subject=document.getElementById('subject').value.trim();
+const message=document.getElementById('message').value.trim();
+
+const recipient='contato@seudominio.com.br';
+
+const body=`Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`;
+
+const mailto=`mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+window.location.href=mailto;
+});
+</script>
+
+</body>
+</html>
