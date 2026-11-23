@@ -1,257 +1,908 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AXIS | Excelência e Inovação</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#080e18;color:#f4f7fc}
-a{text-decoration:none;color:inherit}
-.container{width:90%;max-width:1150px;margin:auto}
-header{position:fixed;top:0;width:100%;z-index:10;background:rgba(8,14,24,.94);backdrop-filter:blur(15px);border-bottom:1px solid #ffffff15}
-nav{height:75px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:27px;font-weight:bold;letter-spacing:3px}
-.logo span{color:#6ca2f3}
-.nav-links{display:flex;gap:32px;list-style:none}
-.nav-links a{font-size:14px;color:#aab6c8;transition:.3s}
-.nav-links a:hover{color:#fff}
-.hero{min-height:100vh;display:flex;align-items:center;background:radial-gradient(circle at 80% 40%,#17365b 0%,#080e18 48%)}
-.hero-content{max-width:720px;padding-top:70px;animation:entrada 1s ease}
-.eyebrow{color:#6ca2f3;font-size:12px;letter-spacing:3px;text-transform:uppercase;margin-bottom:25px}
-h1{font-size:clamp(42px,7vw,76px);line-height:1.1;letter-spacing:-2px;margin-bottom:25px}
-h1 span{color:#6ca2f3}
-.hero p{color:#aab6c8;font-size:17px;line-height:1.8;max-width:560px;margin-bottom:35px}
-.btn{display:inline-block;padding:15px 25px;background:#3978d5;border-radius:4px;font-size:14px;font-weight:bold;transition:.3s}
-.btn:hover{background:#2865bd;transform:translateY(-3px)}
-.btn-outline{background:transparent;border:1px solid #ffffff40;margin-left:10px}
-.btn-outline:hover{background:#ffffff12}
-section{padding:100px 0}
-.about{background:#0c1523}
-.section-title{font-size:40px;margin-bottom:20px;letter-spacing:-1px}
-.section-text{color:#aab6c8;line-height:1.8;max-width:650px;margin-bottom:45px}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.visual{height:350px;background:linear-gradient(135deg,#17365b,#101a2a);display:flex;justify-content:center;align-items:center;border:1px solid #ffffff15;border-radius:7px}
-.visual strong{font-size:120px;color:#6ca2f3}
-.about-description{color:#aab6c8;line-height:1.9;margin-top:20px}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{padding:35px 28px;background:#101a2a;border:1px solid #ffffff12;border-radius:6px;transition:.3s}
-.card:hover{transform:translateY(-7px);border-color:#3978d5}
-.card small{color:#6ca2f3;letter-spacing:2px}
-.card h3{margin:25px 0 15px;font-size:21px}
-.card p{color:#aab6c8;font-size:14px;line-height:1.8}
-.differentials{background:#0c1523}
-.differential-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:35px}
-.differential{border-left:2px solid #3978d5;padding-left:20px}
-.differential h3{margin-bottom:12px}
-.differential p{color:#aab6c8;line-height:1.8;font-size:14px}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
-.contact-info p{color:#aab6c8;line-height:1.9;margin-top:20px}
-form{display:flex;flex-direction:column;gap:17px}
-input,textarea{width:100%;padding:15px;background:#101a2a;border:1px solid #ffffff20;border-radius:4px;color:white;font:inherit;outline:none}
-input:focus,textarea:focus{border-color:#6ca2f3}
-textarea{height:130px;resize:vertical}
-label{font-size:13px;color:#c6d1e0}
-.form-group{display:flex;flex-direction:column;gap:8px}
-button{border:0;color:white;cursor:pointer;font:inherit}
-footer{padding:30px 0;border-top:1px solid #ffffff15;background:#070c14}
-.footer-content{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-footer p{color:#aab6c8;font-size:13px}
-.reveal{opacity:0;transform:translateY(25px);transition:.7s}
-.reveal.active{opacity:1;transform:translateY(0)}
-@keyframes entrada{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
-.menu-toggle{display:none;background:none;color:white;font-size:25px}
-@media(max-width:750px){
-.nav-links{display:none;position:absolute;top:75px;left:0;width:100%;background:#0c1523;padding:25px;flex-direction:column}
-.nav-links.open{display:flex}
-.menu-toggle{display:block}
-.about-grid,.contact-grid{grid-template-columns:1fr}
-.services-grid,.differential-grid{grid-template-columns:1fr}
-.section-title{font-size:32px}
-.btn-outline{margin:12px 0 0}
-}
-@media(prefers-reduced-motion:reduce){
-html{scroll-behavior:auto}
-*,*::before,*::after{animation:none!important;transition:none!important}
-.reveal{opacity:1;transform:none}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finanças, inteligência de dados e inteligência artificial. Explorando novas formas de transformar dados em decisões.">
+    <title>Lucas Sousa | Finance & Data</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #f5f6f2;
+            --surface: #ffffff;
+            --surface-soft: #edf1ec;
+            --navy: #263b48;
+            --navy-light: #3e5662;
+            --green: #718b7b;
+            --green-soft: #dce7df;
+            --text: #34434a;
+            --muted: #84908d;
+            --border: #e5e9e3;
+            --accent: #b5c7b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1100px, 88%);
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            background: rgba(245, 246, 242, 0.92);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Manrope', sans-serif;
+            font-size: 19px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: -0.7px;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--navy);
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 115px 0 105px;
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 24px;
+            height: 1px;
+            background: var(--green);
+        }
+
+        h1 {
+            font-family: 'Manrope', sans-serif;
+            font-size: clamp(40px, 5.5vw, 65px);
+            line-height: 1.13;
+            letter-spacing: -2.8px;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 27px;
+        }
+
+        h1 span {
+            color: var(--green);
+        }
+
+        .hero-description {
+            font-size: 16px;
+            color: #75817e;
+            max-width: 550px;
+            line-height: 1.9;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 23px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        .button-primary {
+            background: var(--navy);
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: var(--green);
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border: 1px solid #d5ddd6;
+            color: var(--navy);
+        }
+
+        .button-secondary:hover {
+            background: var(--green-soft);
+        }
+
+        /* HERO VISUAL */
+
+        .visual-card {
+            background: var(--surface);
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            box-shadow: 0 15px 45px rgba(38, 59, 72, 0.045);
+        }
+
+        .visual-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        .visual-header p {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .visual-header span {
+            font-size: 10px;
+            color: var(--green);
+            background: var(--green-soft);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .visual-title {
+            font-family: 'Manrope', sans-serif;
+            font-size: 23px;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .visual-subtitle {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .chart {
+            height: 130px;
+            display: flex;
+            align-items: end;
+            gap: 12px;
+            margin: 28px 0 20px;
+            border-bottom: 1px solid var(--border);
+            padding: 0 5px;
+        }
+
+        .bar {
+            flex: 1;
+            border-radius: 4px 4px 0 0;
+            background: #dce7df;
+            transition: 0.3s;
+        }
+
+        .bar:nth-child(2n) {
+            background: #9fb5a4;
+        }
+
+        .bar:last-child {
+            background: var(--navy-light);
+        }
+
+        .bar:hover {
+            background: var(--green);
+        }
+
+        .chart-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: var(--muted);
+        }
+
+        .visual-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .visual-footer strong {
+            color: var(--green);
+        }
+
+        /* ABOUT */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-label {
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 13px;
+        }
+
+        .section-title {
+            font-family: 'Manrope', sans-serif;
+            color: var(--navy);
+            font-size: 34px;
+            letter-spacing: -1.2px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .about {
+            background: #edf1ec;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .about-text {
+            color: #75817e;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .about-text p + p {
+            margin-top: 17px;
+        }
+
+        .quote {
+            border-left: 2px solid var(--green);
+            padding-left: 22px;
+            margin-top: 30px;
+            color: var(--navy);
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* AREAS */
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 45px;
+        }
+
+        .area-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(38, 59, 72, 0.06);
+        }
+
+        .area-icon {
+            width: 43px;
+            height: 43px;
+            background: var(--green-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: var(--navy);
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .area-card h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 17px;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .area-card p {
+            font-size: 12px;
+            line-height: 1.9;
+            color: var(--muted);
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: #edf1ec;
+        }
+
+        .projects-intro {
+            max-width: 580px;
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.9;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 42px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-height: 225px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .project-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .project-card h3 {
+            font-family: 'Manrope', sans-serif;
+            color: var(--navy);
+            font-size: 19px;
+            margin: 18px 0 10px;
+        }
+
+        .project-card p {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .project-status {
+            display: inline-block;
+            width: fit-content;
+            margin-top: 20px;
+            font-size: 10px;
+            color: #829084;
+            background: #edf1ec;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        /* TECHNOLOGIES */
+
+        .tech-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .tech-description {
+            max-width: 450px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 430px;
+        }
+
+        .tech-item {
+            padding: 11px 17px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 85px 20px;
+        }
+
+        .contact .section-label {
+            color: #b5c7b8;
+        }
+
+        .contact h2 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 35px;
+            letter-spacing: -1px;
+            margin-bottom: 18px;
+        }
+
+        .contact p {
+            color: #b9c5c5;
+            font-size: 13px;
+            margin-bottom: 30px;
+        }
+
+        .contact .button {
+            display: inline-block;
+            background: #dce7df;
+            color: var(--navy);
+        }
+
+        .contact .button:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 25px 0;
+            background: #20333e;
+            color: #829297;
+            font-size: 11px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer strong {
+            color: #dce7df;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 75px 0;
+                gap: 45px;
+            }
+
+            .visual-card {
+                max-width: 500px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .nav-links {
+                gap: 14px;
+                font-size: 11px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 43px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-<div class="container">
-<nav>
-<a href="#inicio" class="logo">AXIS<span>.</span></a>
-<button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
-<ul class="nav-links" id="nav-links">
-<li><a href="#inicio">Início</a></li>
-<li><a href="#sobre">Sobre</a></li>
-<li><a href="#servicos">Serviços</a></li>
-<li><a href="#diferenciais">Diferenciais</a></li>
-<li><a href="#contato">Contato</a></li>
-</ul>
-</nav>
-</div>
-</header>
+    <!-- NAVIGATION -->
 
-<main>
-<section class="hero" id="inicio">
-<div class="container">
-<div class="hero-content">
-<div class="eyebrow">Excelência e inovação</div>
-<h1>Estratégia para ir além.<br><span>Resultados que importam.</span></h1>
-<p>Acreditamos que grandes resultados começam com boas decisões. Unimos estratégia, qualidade e inovação para construir soluções que geram valor real.</p>
-<a href="#sobre" class="btn">Conheça nossa empresa</a>
-<a href="#servicos" class="btn btn-outline">Nossas soluções</a>
-</div>
-</div>
-</section>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">LUCAS<span>.</span>SOUSA</a>
 
-<section class="about" id="sobre">
-<div class="container">
-<div class="about-grid">
-<div class="visual reveal"><strong>A.</strong></div>
-<div class="reveal">
-<div class="eyebrow">Quem somos</div>
-<h2 class="section-title">Construindo o futuro com propósito e visão.</h2>
-<p class="about-description">Somos uma empresa comprometida com a excelência, a inovação e o desenvolvimento de soluções inteligentes.</p>
-<p class="about-description">Nossa atuação é orientada por uma visão estratégica, valorizando cada projeto e buscando sempre superar expectativas por meio de qualidade e comprometimento.</p>
-</div>
-</div>
-</div>
-</section>
+                <div class="nav-links">
+                    <a href="#sobre">Sobre</a>
+                    <a href="#areas">Interesses</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#contato">Contato</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-<section id="servicos">
-<div class="container">
-<div class="eyebrow">O que fazemos</div>
-<h2 class="section-title reveal">Soluções pensadas para gerar valor.</h2>
-<p class="section-text reveal">Cada desafio exige uma abordagem própria. Por isso, trabalhamos com soluções estruturadas para atender diferentes necessidades.</p>
-<div class="services-grid">
-<div class="card reveal">
-<small>01 / ESTRATÉGIA</small>
-<h3>Planejamento estratégico</h3>
-<p>Organização de objetivos, análise de cenários e desenvolvimento de estratégias orientadas para resultados consistentes.</p>
-</div>
-<div class="card reveal">
-<small>02 / INOVAÇÃO</small>
-<h3>Transformação digital</h3>
-<p>Utilização inteligente da tecnologia para aprimorar processos, ampliar possibilidades e gerar eficiência.</p>
-</div>
-<div class="card reveal">
-<small>03 / GESTÃO</small>
-<h3>Consultoria especializada</h3>
-<p>Análise, orientação e desenvolvimento de soluções personalizadas para cada realidade.</p>
-</div>
-</div>
-</div>
-</section>
+    <!-- HERO -->
 
-<section class="differentials" id="diferenciais">
-<div class="container">
-<div class="eyebrow">Nossos diferenciais</div>
-<h2 class="section-title reveal">O compromisso está em cada detalhe.</h2>
-<p class="section-text reveal">Mais do que entregar soluções, buscamos construir relações duradouras e resultados sustentáveis.</p>
-<div class="differential-grid">
-<div class="differential reveal">
-<h3>Comprometimento</h3>
-<p>Responsabilidade e dedicação em cada etapa, mantendo a qualidade como prioridade.</p>
-</div>
-<div class="differential reveal">
-<h3>Visão estratégica</h3>
-<p>Decisões fundamentadas em planejamento, análise e compreensão dos objetivos.</p>
-</div>
-<div class="differential reveal">
-<h3>Excelência</h3>
-<p>Busca contínua por melhorias e soluções que realmente façam a diferença.</p>
-</div>
-</div>
-</div>
-</section>
+    <main>
+        <div class="container">
+            <section class="hero">
 
-<section id="contato">
-<div class="container">
-<div class="contact-grid">
-<div class="contact-info reveal">
-<div class="eyebrow">Fale conosco</div>
-<h2 class="section-title">Vamos construir algo relevante?</h2>
-<p>Estamos disponíveis para conhecer seu projeto, compreender suas necessidades e encontrar caminhos para transformar ideias em resultados.</p>
-</div>
-<form id="contact-form" class="reveal">
-<div class="form-group">
-<label for="name">Nome completo</label>
-<input type="text" id="name" placeholder="Digite seu nome" required>
-</div>
-<div class="form-group">
-<label for="email">E-mail</label>
-<input type="email" id="email" placeholder="seu@email.com" required>
-</div>
-<div class="form-group">
-<label for="subject">Assunto</label>
-<input type="text" id="subject" placeholder="Assunto da mensagem" required>
-</div>
-<div class="form-group">
-<label for="message">Mensagem</label>
-<textarea id="message" placeholder="Como podemos ajudar?" required></textarea>
-</div>
-<button type="submit" class="btn">Enviar mensagem</button>
-</form>
-</div>
-</div>
-</section>
-</main>
+                <div>
+                    <div class="eyebrow">Finance · Data · Intelligence</div>
 
-<footer>
-<div class="container footer-content">
-<a href="#inicio" class="logo">AXIS<span>.</span></a>
-<p>© <span id="year"></span> AXIS. Todos os direitos reservados.</p>
-</div>
-</footer>
+                    <h1>
+                        Finanças com uma nova perspectiva<span>.</span>
+                    </h1>
 
-<script>
-const toggle=document.getElementById('menu-toggle');
-const links=document.getElementById('nav-links');
+                    <p class="hero-description">
+                        Explorando a interseção entre finanças, análise de dados e inteligência artificial.
+                        Transformando informações em insights, processos em soluções e dados em decisões melhores.
+                    </p>
 
-toggle.addEventListener('click',()=>{
-links.classList.toggle('open');
-toggle.setAttribute('aria-expanded',links.classList.contains('open'));
-});
+                    <div class="hero-buttons">
+                        <a href="#projetos" class="button button-primary">
+                            Explorar projetos
+                        </a>
 
-document.querySelectorAll('.nav-links a').forEach(link=>{
-link.addEventListener('click',()=>links.classList.remove('open'));
-});
+                        <a href="#sobre" class="button button-secondary">
+                            Conhecer minha visão
+                        </a>
+                    </div>
+                </div>
 
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('active');
-observer.unobserve(entry.target);
-}
-});
-},{threshold:0.12});
+                <div class="visual-card">
+                    <div class="visual-header">
+                        <p>FINANCIAL INTELLIGENCE</p>
+                        <span>DATA INSIGHTS</span>
+                    </div>
 
-document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));
+                    <div class="visual-title">Data-driven finance</div>
+                    <div class="visual-subtitle">
+                        A conexão entre números e estratégia.
+                    </div>
 
-document.getElementById('year').textContent=new Date().getFullYear();
+                    <div class="chart">
+                        <div class="bar" style="height:35%"></div>
+                        <div class="bar" style="height:48%"></div>
+                        <div class="bar" style="height:42%"></div>
+                        <div class="bar" style="height:63%"></div>
+                        <div class="bar" style="height:55%"></div>
+                        <div class="bar" style="height:78%"></div>
+                        <div class="bar" style="height:70%"></div>
+                        <div class="bar" style="height:92%"></div>
+                    </div>
 
-document.getElementById('contact-form').addEventListener('submit',event=>{
-event.preventDefault();
+                    <div class="chart-labels">
+                        <span>JAN</span>
+                        <span>FEV</span>
+                        <span>MAR</span>
+                        <span>ABR</span>
+                        <span>MAI</span>
+                        <span>JUN</span>
+                        <span>JUL</span>
+                        <span>AGO</span>
+                    </div>
 
-const name=document.getElementById('name').value.trim();
-const email=document.getElementById('email').value.trim();
-const subject=document.getElementById('subject').value.trim();
-const message=document.getElementById('message').value.trim();
+                    <div class="visual-footer">
+                        <span>Analytics & Strategy</span>
+                        <strong>Beyond the numbers.</strong>
+                    </div>
+                </div>
 
-const recipient='contato@seudominio.com.br';
+            </section>
+        </div>
 
-const body=`Nome: ${name}\nE-mail: ${email}\n\nMensagem:\n${message}`;
+        <!-- ABOUT -->
 
-const mailto=`mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        <section class="about" id="sobre">
+            <div class="container">
+                <div class="about-content">
 
-window.location.href=mailto;
-});
-</script>
+                    <div>
+                        <div class="section-label">01 / Sobre</div>
+                        <h2 class="section-title">
+                            Uma visão que vai além dos números.
+                        </h2>
+                    </div>
+
+                    <div class="about-text">
+                        <p>
+                            Sou Lucas Sousa, profissional da área financeira, interessado em compreender
+                            como tecnologia e inteligência de dados podem transformar a maneira como
+                            empresas analisam informações e tomam decisões.
+                        </p>
+
+                        <p>
+                            Minha trajetória em finanças despertou o interesse por uma abordagem mais
+                            analítica dos negócios. Mais do que acompanhar indicadores, acredito no
+                            potencial de explorar dados, identificar padrões e desenvolver ferramentas
+                            que tornem os processos financeiros mais inteligentes e eficientes.
+                        </p>
+
+                        <p>
+                            Atualmente, direciono meus estudos para análise de dados, programação,
+                            automação e inteligência artificial, buscando aproximar o conhecimento
+                            financeiro das possibilidades oferecidas pela tecnologia.
+                        </p>
+
+                        <div class="quote">
+                            "A tecnologia potencializa os números.
+                            A análise transforma números em decisões."
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- AREAS OF INTEREST -->
+
+        <section id="areas">
+            <div class="container">
+
+                <div class="section-label">02 / Áreas de interesse</div>
+
+                <h2 class="section-title">
+                    Onde finanças encontram tecnologia.
+                </h2>
+
+                <p class="projects-intro">
+                    Três áreas que se complementam e oferecem novas possibilidades
+                    para a gestão, análise e estratégia financeira.
+                </p>
+
+                <div class="areas-grid">
+
+                    <div class="area-card">
+                        <div class="area-icon">↗</div>
+                        <h3>Financial Analytics</h3>
+                        <p>
+                            Análise de indicadores, modelagem financeira, projeções,
+                            orçamento, fluxo de caixa e inteligência para tomada de decisões.
+                        </p>
+                    </div>
+
+                    <div class="area-card">
+                        <div class="area-icon">⌘</div>
+                        <h3>Data & Automation</h3>
+                        <p>
+                            Python, SQL, Business Intelligence e automação de processos.
+                            Transformando bases de dados em informações estruturadas e úteis.
+                        </p>
+                    </div>
+
+                    <div class="area-card">
+                        <div class="area-icon">✳</div>
+                        <h3>AI in Finance</h3>
+                        <p>
+                            Inteligência artificial aplicada à análise financeira,
+                            identificação de padrões, otimização de processos e suporte estratégico.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+
+        <section class="projects" id="projetos">
+            <div class="container">
+
+                <div class="section-label">03 / Portfólio</div>
+
+                <h2 class="section-title">
+                    Projetos em desenvolvimento.
+                </h2>
+
+                <p class="projects-intro">
+                    Um espaço dedicado a experimentos, análises e soluções que conectam
+                    dados, tecnologia e finanças. Cada projeto representa uma oportunidade
+                    de transformar conhecimento em aplicação prática.
+                </p>
+
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <div>
+                            <span class="project-tag">01 · Financial Analysis</span>
+                            <h3>Financial Performance Dashboard</h3>
+                            <p>
+                                Dashboard interativo para análise de desempenho financeiro,
+                                acompanhamento de KPIs, receitas, despesas e evolução de resultados.
+                            </p>
+                        </div>
+                        <span class="project-status">Em planejamento</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <span class="project-tag">02 · Python & Automation</span>
+                            <h3>Financial Process Automation</h3>
+                            <p>
+                                Desenvolvimento de ferramentas em Python para automatizar
+                                rotinas financeiras, tratamento de dados e conciliações.
+                            </p>
+                        </div>
+                        <span class="project-status">Em planejamento</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <span class="project-tag">03 · Financial Modeling</span>
+                            <h3>Cash Flow Forecasting</h3>
+                            <p>
+                                Construção de modelos de previsão de fluxo de caixa,
+                                análise de cenários e projeções financeiras.
+                            </p>
+                        </div>
+                        <span class="project-status">Em planejamento</span>
+                    </div>
+
+                    <div class="project-card">
+                        <div>
+                            <span class="project-tag">04 · Artificial Intelligence</span>
+                            <h3>AI-powered Financial Insights</h3>
+                            <p>
+                                Exploração de modelos de inteligência artificial para
+                                interpretar dados financeiros, detectar anomalias e gerar insights.
+                            </p>
+                        </div>
+                        <span class="project-status">Em planejamento</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGIES -->
+
+        <section>
+            <div class="container">
+                <div class="tech-content">
+
+                    <div>
+                        <div class="section-label">04 / Ferramentas & tecnologias</div>
+
+                        <h2 class="section-title">
+                            Construindo novas possibilidades.
+                        </h2>
+
+                        <p class="tech-description">
+                            Tecnologias e ferramentas que fazem parte da minha jornada
+                            de aprendizado e desenvolvimento de soluções orientadas por dados.
+                        </p>
+                    </div>
+
+                    <div class="tech-list">
+                        <span class="tech-item">Python</span>
+                        <span class="tech-item">SQL</span>
+                        <span class="tech-item">Power BI</span>
+                        <span class="tech-item">Excel</span>
+                        <span class="tech-item">Pandas</span>
+                        <span class="tech-item">Data Analytics</span>
+                        <span class="tech-item">Machine Learning</span>
+                        <span class="tech-item">Artificial Intelligence</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+
+        <section class="contact" id="contato">
+
+            <div class="section-label">05 / Conexões</div>
+
+            <h2>Vamos além dos números?</h2>
+
+            <p>
+                Ideias, tecnologia e finanças. Sempre aberto a novas conexões e possibilidades.
+            </p>
+
+            <!-- Substitua pelo seu endereço de e-mail -->
+            <a href="mailto:seuemail@email.com" class="button">
+                Entre em contato ↗
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+
+                <span>© 2026 <strong>Lucas Sousa</strong>. Todos os direitos reservados.</span>
+
+                <span>Finance · Data · Intelligence</span>
+
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
